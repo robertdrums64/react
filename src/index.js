@@ -5,6 +5,7 @@ import './index.css';
  //------------------------------------------------------------------ 
 //SQUARE COMPONENT
 class Square extends React.Component {
+    //CONSTRUCTOR THAT INITIALIZES THE STATE
     constructor(props) {
         super(props);
         this.state = {
@@ -36,7 +37,12 @@ class Square extends React.Component {
     
     //FROM SQUARE COMPONENT
     renderSquare(i) {
-      return <Square value={i} />;
+      return (
+        <Square 
+          value={this.state.squares[i]} 
+          onClick={() => this.handleClick(i)} 
+          />
+      );
     }
     
     //RENDERS NEXT PLAYER
